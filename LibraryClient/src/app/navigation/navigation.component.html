@@ -1,10 +1,18 @@
-<div class="row navegation">
-  <div class="witdh-left"></div>
-  <div class="btn-group witdh-center" data-toggle="buttons">
-    <button type="button" class="btn btn-outline-primary witdh-item">Home1</button>
-    <button type="button" class="btn btn-outline-primary witdh-item">Home2</button>
-    <button type="button" class="btn btn-outline-primary witdh-item">Home3</button>
-    <button type="button" class="btn btn-outline-primary witdh-item">Home4</button>
-  </div>
-  <div class="witdh-right"></div>
+<div class="button-row">
+  <button mat-fab class="navegation-image">
+    <img [src]="Logo"/>
+  </button>
+  <button mat-raised-button (click)="clickHome1()" class="navegation-item text-white">
+    <h3>Home</h3>
+  </button>
+  <button mat-raised-button (click)="clickHome4()" class="navegation-item text-white">
+    <h3>Doações</h3>
+  </button>
+  <button mat-raised-button (click)="clickHome2()" class="navegation-item text-white">
+    <h3>Acervo</h3>
+  </button>
+  <button mat-raised-button (click)="clickHome3()" class="navegation-item text-white">
+    <h3>Empréstimo</h3>
+  </button>
 </div>
+

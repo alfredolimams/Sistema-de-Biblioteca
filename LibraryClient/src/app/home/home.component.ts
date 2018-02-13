@@ -8,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
-
+  user_name :string ;
+  user_pswd :string ;
   ngOnInit() {
+  }
+
+  singIn(){
+    console.log( this.user_name + this.user_pswd );
+  }
+
+  singUp(){
+
   }
 
 }

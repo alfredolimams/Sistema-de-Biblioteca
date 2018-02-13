@@ -1,15 +1,6 @@
-.witdh-left {
-  width: 15%;
-}
-
-.witdh-center {
-  width: 70%;
-}
-
-.witdh-right {
-  width: 15%;
-}
-.height-header {
-  height: 50%;
+.header {
+  height: 0%;
   width: 100%;
+  z-index: 5;
+  box-shadow: 0px 5px 10px black;
 }

@@ -1,9 +1,35 @@
-<div class="row text-center">
-  <div class="witdh-left bg-info"></div>
-  <div class="witdh-center">
+<div class="body">
+  <div class="box-outside">
 
-      AAA
+    <mat-card class="box-inside">
+      <form>
+
+        <div class="form-group">
+          <div class="mat-h3" >
+            <label> <h3>Usuário:</h3> </label>
+          </div>
+          <div>
+            <input [(ngModel)]="user_name" type="text" value="" name="name" >
+          </div>
+          <div>
+            <label> <h3>Senha:</h3> </label>
+          </div>
+          <div>
+            <input [(ngModel)]="user_pswd" type="password" value="" name="pswd" >
+          </div>
+        </div>
+
+        <div class="form-group box-button" >
+          <button mat-raised-button (click)="singIn()">
+            Entrar
+          </button>
+          <button mat-raised-button (click)="singUp()">
+            Cadastrar
+          </button>
+        </div>
+
+      </form>
+    </mat-card>
 
   </div>
-  <div class="witdh-right bg-info"></div>
 </div>
