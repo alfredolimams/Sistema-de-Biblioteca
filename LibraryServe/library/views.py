@@ -1,8 +1,14 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import viewsets, generics
 
-# Create your views here.
+from .models import Book
+from .serializers import BookSerializer
 
 
-def index(request):
-    return HttpResponse("Page of return Serve")
+class BookList(generics.ListCreateAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+
+class BookDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
