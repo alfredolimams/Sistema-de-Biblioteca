@@ -24,8 +24,6 @@ from rest_framework import routers
 
 
 router = routers.DefaultRouter()
-#router.register(r'books', BookViewSet)
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),

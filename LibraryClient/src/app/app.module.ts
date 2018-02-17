@@ -11,6 +11,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { AuthenticationComponent } from './authentication/authentication.component';
+import {AuthenticationService} from './authentication/authentication.service';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import {HttpClientModule} from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     NavigationComponent,
-    HomeComponent
+    HomeComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -27,8 +31,9 @@ import {HttpClientModule} from '@angular/common/http';
     MatButtonModule,
     MatInputModule,
     FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
