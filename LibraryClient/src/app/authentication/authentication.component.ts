@@ -13,19 +13,19 @@ export class AuthenticationComponent implements OnInit {
 
   user : User = new User();
 
+  token: string = "";
+
   ngOnInit() {
   }
 
   singIn(){
 
-    console.log("Chamou 2!!!");
-
     this.authenticationService.login(this.user).subscribe(
       (data:any) => {
-        console.log("Certo");
+        this.token = data.token;
       } ,
       error => {
-        console.log("Erro");
+        alert("Erro na autenticação!");
       }
       );
 
