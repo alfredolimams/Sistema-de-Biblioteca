@@ -1,4 +1,5 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import User, UserManager
 from django.db import models
 
 # Create your models here.
@@ -15,18 +16,25 @@ class Book(models.Model):
         return self.title
     pass
 
-class Profile(models.Model):
+class Profile(AbstractBaseUser):
 
-    user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE)
+    #user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     phone = models.CharField(max_length=200)
     image = models.ImageField()
     registration = models.CharField(max_length=200)
 
+    USERNAME_FIELD = 'email'
+    EMAIL_FIELD = 'email'
+    REQUIRED_FIELDS = ['name', 'phone']
+
+    objects = UserManager()
+
     def __str__(self):
         return self.name
-    pass
+
+
 
 class Location(models.Model):
 
