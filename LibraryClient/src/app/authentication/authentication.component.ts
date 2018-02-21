@@ -22,7 +22,7 @@ export class AuthenticationComponent implements OnInit {
 
     this.authenticationService.login(this.user).subscribe(
       (data:any) => {
-        this.token = data.token;
+        localStorage.setItem('token', data.token);
       } ,
       error => {
         alert("Erro na autenticação!");
