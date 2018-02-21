@@ -150,5 +150,4 @@ JWT_AUTH = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
-#AUTH_PROFILE_MODULE = 'accounts.UserProfile'
-AUTH_USER_MODEL = 'library.Profile'
+AUTH_USER_MODEL = 'library.MyUser'
