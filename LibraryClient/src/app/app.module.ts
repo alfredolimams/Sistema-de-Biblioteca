@@ -1,6 +1,6 @@
 ///<reference path="../../node_modules/@angular/platform-browser/animations/src/module.d.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -13,6 +13,17 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import {AuthenticationService} from './authentication/authentication.service';
+import { MaterializeModule } from 'angular2-materialize';
+import {RouterModule, Routes} from "@angular/router";
+import { DataComponent } from './data/data.component';
+
+const APP_ROUTES: Routes = [
+  { path: 'login', component: AuthenticationComponent},
+  { path: 'data', component: DataComponent},
+  { path: '', component: AuthenticationComponent}
+];
+
+export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
 
 
 @NgModule({
@@ -22,7 +33,8 @@ import {AuthenticationService} from './authentication/authentication.service';
     FooterComponent,
     NavigationComponent,
     HomeComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    DataComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -32,6 +44,8 @@ import {AuthenticationService} from './authentication/authentication.service';
     MatInputModule,
     FormsModule,
     HttpClientModule,
+    MaterializeModule,
+    routing,
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

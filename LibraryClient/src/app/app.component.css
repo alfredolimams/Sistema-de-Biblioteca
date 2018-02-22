@@ -1,3 +1,9 @@
-.body-div{
-  height: 12cm;
+.all {
+  display:flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.fill-container{
+  flex: 1;
 }

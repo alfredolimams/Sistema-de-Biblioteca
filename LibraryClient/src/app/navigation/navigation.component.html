@@ -1,18 +1,10 @@
-<div class="button-row">
-  <button mat-fab class="navegation-image">
-    <img [src]="Logo"/>
-  </button>
-  <button mat-raised-button (click)="clickHome1()" class="navegation-item text-white">
-    <h3>Home</h3>
-  </button>
-  <button mat-raised-button (click)="clickHome4()" class="navegation-item text-white">
-    <h3>Doações</h3>
-  </button>
-  <button mat-raised-button (click)="clickHome2()" class="navegation-item text-white">
-    <h3>Acervo</h3>
-  </button>
-  <button mat-raised-button (click)="clickHome3()" class="navegation-item text-white">
-    <h3>Empréstimo</h3>
-  </button>
-</div>
-
+<nav class="navbar-fixed">
+  <div class="nav-wrapper blue lighten-1">
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li> <a routerLink=""> Home </a> </li>
+      <li> <a routerLink="/data" > Dados </a> </li>
+      <li> <a> Home2 </a> </li>
+      <li> <a> Home4 </a> </li>
+    </ul>
+  </div>
+</nav>
