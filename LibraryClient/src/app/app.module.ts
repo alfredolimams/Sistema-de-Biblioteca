@@ -17,6 +17,8 @@ import { MaterializeModule } from 'angular2-materialize';
 import {RouterModule, Routes} from "@angular/router";
 import { DataComponent } from './data/data.component';
 import {DataService} from "./data/data.service";
+import { BookComponent } from './book/book.component';
+import {BookService} from "./book/book.service";
 
 const APP_ROUTES: Routes = [
   { path: 'login', component: AuthenticationComponent},
@@ -35,7 +37,8 @@ export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
     NavigationComponent,
     HomeComponent,
     AuthenticationComponent,
-    DataComponent
+    DataComponent,
+    BookComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -48,7 +51,7 @@ export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
     MaterializeModule,
     routing,
   ],
-  providers: [AuthenticationService, DataService],
+  providers: [AuthenticationService, DataService, BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
