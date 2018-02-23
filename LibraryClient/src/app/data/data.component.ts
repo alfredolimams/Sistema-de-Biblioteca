@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthenticationService} from "../authentication/authentication.service";
+import {DataService} from "./data.service";
 
 @Component({
   selector: 'app-data',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dataService:DataService
+  ) { }
+
+  v:any;
 
   ngOnInit() {
+    console.log("Chamou");
+    this.dataService.getUsers().subscribe(
+      (data:any) => {
+        console.log(data);
+        this.v = data;
+      } ,
+      error => {
+        alert("Erro em Data!");
+        console.log(error);
+      }
+    );
   }
+
+
 
 }

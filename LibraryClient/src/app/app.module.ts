@@ -16,6 +16,7 @@ import {AuthenticationService} from './authentication/authentication.service';
 import { MaterializeModule } from 'angular2-materialize';
 import {RouterModule, Routes} from "@angular/router";
 import { DataComponent } from './data/data.component';
+import {DataService} from "./data/data.service";
 
 const APP_ROUTES: Routes = [
   { path: 'login', component: AuthenticationComponent},
@@ -47,7 +48,7 @@ export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
     MaterializeModule,
     routing,
   ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

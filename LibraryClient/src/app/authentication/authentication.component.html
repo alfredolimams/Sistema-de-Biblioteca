@@ -1,26 +1,28 @@
 <div class="auth-hor">
   <div>
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
+    <div class="card yellow yellow lighten-3">
+      <div class="card-content black-text">
         <span class="card-title"> <h3 class="display-4"> Login </h3> </span>
       </div>
-      <div class="card-action card-content white-text">
+      <div class="card-action card-content black-text">
         <div >
-          <label> <h6 class="white-text">Usuário:</h6> </label>
+          <label> <h6 class="black-text">Usuário:</h6> </label>
         </div>
         <div>
-          <input [(ngModel)]="user.username" type="text" value="" name="name" >
+          <input [(ngModel)]="user.email" type="text" value="" name="name" >
         </div>
         <div>
-          <label> <h6 class="white-text">Senha:</h6> </label>
+          <label> <h6 class="black-text">Senha:</h6> </label>
         </div>
         <div>
           <input [(ngModel)]="user.password" type="password" value="" name="pswd" >
         </div>
       </div>
-      <div class="auth-vert">
-        <a class="waves-effect waves-light btn">button</a>
-        <a class="waves-effect waves-light btn">button</a>
+      <div class="card-action">
+        <div class="auth-vert">
+          <a class="btn-large light-blue" (click)="singIn()" >Entrar</a>
+          <a class="btn-large light-blue" (click)="singUp()" >Cadastrar</a>
+        </div>
       </div>
     </div>
   </div>

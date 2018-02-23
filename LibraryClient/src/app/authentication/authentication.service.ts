@@ -11,4 +11,8 @@ export class AuthenticationService {
     return this.httpClient.post( 'http://localhost:8000/auth-jwt/' , User , {headers:headers});
   }
 
+  getToken(){
+    return localStorage.getItem('token');
+  }
+
 }

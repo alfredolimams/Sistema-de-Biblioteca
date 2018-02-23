@@ -6,6 +6,7 @@ urlpatterns = [
     url(r'^books/$', views.BookList.as_view()),
     url(r'^books/(?P<pk>[0-9]+)/$', views.BookDetail.as_view()),
     url(r'^user/$', views.CurrentUserView.as_view()),
+    url(r'^users/$', views.UserList.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

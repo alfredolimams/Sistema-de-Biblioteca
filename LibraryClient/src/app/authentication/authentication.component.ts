@@ -16,8 +16,6 @@ export class AuthenticationComponent implements OnInit {
 
   user : User = new User();
 
-  token: string = "";
-
   ngOnInit() {
   }
 
@@ -26,13 +24,17 @@ export class AuthenticationComponent implements OnInit {
     this.authenticationService.login(this.user).subscribe(
       (data:any) => {
         localStorage.setItem('token', data.token);
-        this.router.navigate(['']);
+        this.router.navigate(['/data']);
       } ,
       error => {
         alert("Erro na autenticação!");
       }
       );
 
+  }
+
+  singUp(){
+    console.log("Chamou!");
   }
 
 }
