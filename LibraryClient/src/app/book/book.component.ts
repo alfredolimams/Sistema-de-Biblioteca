@@ -14,6 +14,7 @@ export class BookComponent implements OnInit {
 
   ngOnInit() {
     console.log("Chamou");
+
     this.bookService.getBooks().subscribe(
       (data:any) => {
         console.log(data);
