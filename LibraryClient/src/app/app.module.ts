@@ -14,15 +14,20 @@ import {HttpClientModule} from '@angular/common/http';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import {AuthenticationService} from './authentication/authentication.service';
 import { MaterializeModule } from 'angular2-materialize';
-import {RouterModule, Routes} from "@angular/router";
+import {RouterModule, Routes, CanActivate } from "@angular/router";
 import { DataComponent } from './data/data.component';
 import {DataService} from "./data/data.service";
 import { BookComponent } from './book/book.component';
 import {BookService} from "./book/book.service";
+import {AuthGuard} from "./auth.guard";
 
 const APP_ROUTES: Routes = [
   { path: 'login', component: AuthenticationComponent},
-  { path: 'data', component: DataComponent},
+  { path: 'data',
+    component: DataComponent,
+    canActivate: [AuthGuard]
+
+  },
   { path: '', component: AuthenticationComponent}
 ];
 
@@ -51,7 +56,7 @@ export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
     MaterializeModule,
     routing,
   ],
-  providers: [AuthenticationService, DataService, BookService],
+  providers: [AuthenticationService, DataService, BookService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

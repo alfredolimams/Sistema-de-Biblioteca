@@ -11,6 +11,12 @@ export class AuthenticationService {
     return this.httpClient.post( 'http://localhost:8000/auth-jwt/' , User , {headers:headers});
   }
 
+  verify(){
+    let headers:HttpHeaders = new HttpHeaders();
+    let token:any = { "token" : this.getToken() };
+    return this.httpClient.post( 'http://localhost:8000/auth-jwt-verify/' , token , {headers:headers} );
+  }
+
   getToken(){
     return localStorage.getItem('token');
   }
