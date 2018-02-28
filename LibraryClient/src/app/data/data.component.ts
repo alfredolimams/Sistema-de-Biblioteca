@@ -17,7 +17,7 @@ export class DataComponent implements OnInit {
 
   ngOnInit() {
     console.log("Chamou");
-    this.dataService.getUsers().subscribe(
+    this.dataService.getUser().subscribe(
       (data:any) => {
         console.log(data);
         this.v = data;

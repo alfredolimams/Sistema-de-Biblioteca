@@ -10,9 +10,9 @@ export class DataService {
     private authService:AuthenticationService
   ) { }
 
-  getUsers(){
+  getUser(){
     let headers:HttpHeaders = new HttpHeaders().set('Authorization', 'JWT ' + this.authService.getToken() );
-    return this.httpClient.get( 'http://localhost:8000/users/' ,  {headers:headers});
+    return this.httpClient.get( 'http://localhost:8000/user/' ,  {headers:headers});
   }
 
 }

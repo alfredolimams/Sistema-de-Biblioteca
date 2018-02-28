@@ -10,4 +10,4 @@ class BookSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = MyUser
-        fields = ('id', 'email', 'registry')
+        fields = ('id', 'email', 'registry', 'photo', 'tee', 'name')
