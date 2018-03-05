@@ -20,6 +20,7 @@ import {DataService} from "./data/data.service";
 import { BookComponent } from './book/book.component';
 import {BookService} from "./book/book.service";
 import {AuthGuard} from "./auth.guard";
+import { BodyComponent } from './body/body.component';
 
 const APP_ROUTES: Routes = [
   { path: 'login', component: AuthenticationComponent},
@@ -28,7 +29,7 @@ const APP_ROUTES: Routes = [
     canActivate: [AuthGuard]
 
   },
-  { path: '', component: AuthenticationComponent}
+  { path: '' , component: HomeComponent }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
@@ -43,7 +44,8 @@ export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
     HomeComponent,
     AuthenticationComponent,
     DataComponent,
-    BookComponent
+    BookComponent,
+    BodyComponent
   ],
   imports: [
     BrowserAnimationsModule,

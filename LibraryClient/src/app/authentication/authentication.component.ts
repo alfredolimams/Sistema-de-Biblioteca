@@ -27,7 +27,7 @@ export class AuthenticationComponent implements OnInit {
         this.router.navigate(['/data']);
       } ,
       error => {
-        alert("Erro na autenticação!");
+        this.router.navigate(['/home']);
       }
       );
 
