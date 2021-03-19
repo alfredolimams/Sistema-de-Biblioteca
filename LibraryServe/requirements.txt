@@ -6,7 +6,7 @@ click==6.7
 Django==2.0.2
 django-cors-headers==2.1.0
 django-filter==1.1.0
-djangorestframework==3.7.7
+djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
 Flask==0.12.2
 httpie==0.9.9
