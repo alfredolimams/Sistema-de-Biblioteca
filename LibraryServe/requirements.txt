@@ -23,6 +23,6 @@ PyJWT==1.5.3
 pytz==2018.3
 requests==2.18.4
 router==0.1
-urllib3==1.22
+urllib3==1.26.5
 Werkzeug==0.14.1
 psycopg2==2.7.4
